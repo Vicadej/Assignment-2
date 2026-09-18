@@ -4,7 +4,7 @@ A small, responsive two-page website built for the Office of Student Engagement 
 
 **Pages**
 - `index.html` — home page with a hero banner, a highlighted featured event, a grid of upcoming events, and an "About" section for the Office of Student Engagement.
-- `event.html` — a detail page for the featured event ("Fall Welcome Fest") with a full description, schedule table, quick-facts sidebar, photo gallery, and campus map.
+- `event.html` — a detail page for the featured event ("Fall Welcome Fest") with a large hero image, full description, attendee expectations, schedule table, accessibility info, a quick-facts sidebar with an RSVP button, and a related-events section.
 
 ## Project structure
 
@@ -39,10 +39,13 @@ Assignment-2/
 | `images/event-homecoming.jpg` | Homecoming Rivalry Game card |
 | `images/event-food-fest.jpg` | International Food Festival card |
 | `images/event-yoga.jpg` | Wellness & Yoga Workshop card |
+| `images/welcome-fest.jpg` | Event detail page hero banner |
 
-A dark gradient overlay sits between the hero photo and its text so the heading and buttons stay readable over any photo.
+A dark gradient overlay sits between each hero photo and its text so the heading and buttons stay readable over any photo.
 
 **Event cards.** Each of the 5 upcoming-event cards includes an image, name, date/time, location, a category tag (Social, Career, Athletics, Culture, Wellness), a short description, and a "View Details" link. Since this assignment only calls for one event detail page, every "View Details" link points to `event.html`; each link has a unique `aria-label` naming its event so it remains meaningful out of context (e.g. "View details for Open Mic Night") rather than pointing to unbuilt pages. The grid itself uses CSS Grid at three different widths — 1 column on mobile, 2 at the 600px breakpoint, 3 at the 900px breakpoint.
+
+**Event detail page layout.** `event.html` uses CSS Grid for its two-column body (`.event-details-grid`): a single column on mobile/tablet that stacks the sidebar below the main article, switching to a 2fr/1fr article+sidebar split at the 900px breakpoint. The sidebar has date, time, location, organizer, and admission info, plus an RSVP button and a contact button. The "Related Events" section underneath uses Flexbox (`display: flex; flex-wrap: wrap`) instead of Grid for its three compact cards, so it's a deliberate contrast with the Grid-based layout used everywhere else — demonstrating both techniques and letting the cards reflow naturally at any width.
 
 ## Viewing the site
 
