@@ -35,6 +35,8 @@
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-heading">
+      <img class="hero-bg" src="images/hero.jpg" alt="Students gathering on the Quad at Northridge University during a campus event">
+      <div class="hero-overlay"></div>
       <div class="container hero-inner">
         <p class="eyebrow">Fall Semester 2026</p>
         <h1 id="hero-heading">Discover What's Happening on Campus</h1>
@@ -69,43 +71,68 @@
         <p class="section-lede">A quick look at what else is on the calendar. Check back often — new events are added every week.</p>
         <ul class="event-grid">
           <li class="event-card">
+            <img src="images/event-open-mic.jpg" alt="A student performing at the microphone during Open Mic Night in the Student Union Café" loading="lazy">
             <div class="event-card-body">
-              <p class="event-date">Thu, Sept 25 · 7:00 PM</p>
+              <div class="event-card-meta">
+                <p class="event-date">Thu, Sept 25 · 7:00 PM</p>
+                <span class="category-tag">Social</span>
+              </div>
               <h3>Open Mic Night</h3>
               <p class="event-location">📍 Student Union Café</p>
               <p>Sign up to perform or just enjoy an evening of music, poetry, and comedy from fellow students. Hosted by the Student Activities Board.</p>
+              <a class="details-link" href="event.html" aria-label="View details for Open Mic Night">View Details →</a>
             </div>
           </li>
           <li class="event-card">
+            <img src="images/event-career-fair.jpg" alt="Students talking with recruiters at booths during the Career and Internship Fair" loading="lazy">
             <div class="event-card-body">
-              <p class="event-date">Fri, Oct 2 · 10:00 AM</p>
+              <div class="event-card-meta">
+                <p class="event-date">Fri, Oct 2 · 10:00 AM</p>
+                <span class="category-tag">Career</span>
+              </div>
               <h3>Career &amp; Internship Fair</h3>
               <p class="event-location">📍 Grand Hall, Union Building</p>
               <p>Meet recruiters from over 60 companies and nonprofits. Bring copies of your résumé — Career Services will also run free on-site reviews.</p>
+              <a class="details-link" href="event.html" aria-label="View details for the Career and Internship Fair">View Details →</a>
             </div>
           </li>
           <li class="event-card">
+            <img src="images/event-homecoming.jpg" alt="Students cheering in the stands at the Homecoming Rivalry Game" loading="lazy">
             <div class="event-card-body">
-              <p class="event-date">Sat, Oct 10 · 6:00 PM</p>
+              <div class="event-card-meta">
+                <p class="event-date">Sat, Oct 10 · 6:00 PM</p>
+                <span class="category-tag">Athletics</span>
+              </div>
               <h3>Homecoming Rivalry Game</h3>
-              <p class="event-location">📍 Fieldhouse Arena</p>
+              <p class="event-location">📍 Falcon Stadium</p>
               <p>Cheer on the Northridge Falcons as they face the Ridgeview Hawks. Student section opens at 5:00 PM with a free t-shirt giveaway.</p>
+              <a class="details-link" href="event.html" aria-label="View details for the Homecoming Rivalry Game">View Details →</a>
             </div>
           </li>
           <li class="event-card">
+            <img src="images/event-food-fest.jpg" alt="A spread of dishes from different cultures at the International Food Festival" loading="lazy">
             <div class="event-card-body">
-              <p class="event-date">Sun, Oct 18 · 12:00 PM</p>
+              <div class="event-card-meta">
+                <p class="event-date">Sun, Oct 18 · 12:00 PM</p>
+                <span class="category-tag">Culture</span>
+              </div>
               <h3>International Food Festival</h3>
               <p class="event-location">📍 Commons Lawn</p>
               <p>Sample dishes from over 20 cultures, prepared by the Multicultural Student Council and campus international organizations.</p>
+              <a class="details-link" href="event.html" aria-label="View details for the International Food Festival">View Details →</a>
             </div>
           </li>
           <li class="event-card">
+            <img src="images/event-yoga.jpg" alt="Students stretching on mats during the Wellness and Yoga Workshop" loading="lazy">
             <div class="event-card-body">
-              <p class="event-date">Thu, Oct 22 · 5:30 PM</p>
+              <div class="event-card-meta">
+                <p class="event-date">Thu, Oct 22 · 5:30 PM</p>
+                <span class="category-tag">Wellness</span>
+              </div>
               <h3>Wellness &amp; Yoga Workshop</h3>
               <p class="event-location">📍 Rec Center Studio B</p>
               <p>A relaxing all-levels session led by Campus Recreation. Mats provided — just bring water and comfortable clothing.</p>
+              <a class="details-link" href="event.html" aria-label="View details for the Wellness and Yoga Workshop">View Details →</a>
             </div>
           </li>
         </ul>
@@ -115,14 +142,14 @@
     <section class="about" id="about" aria-labelledby="about-heading">
       <div class="container about-inner">
         <h2 id="about-heading">About the Office of Student Engagement</h2>
-        <p>The Office of Student Engagement connects students with the people, programs, and organizations that make Northridge University feel like home. We partner with the Student Activities Board, Multicultural Student Council, Career Services, Campus Recreation, and Athletics to bring you a full calendar of events every semester.</p>
-        <div class="org-list">
-          <span>Student Activities Board</span>
-          <span>Multicultural Student Council</span>
-          <span>Career Services</span>
-          <span>Campus Recreation</span>
-          <span>Falcon Athletics</span>
-        </div>
+        <p>The Office of Student Engagement connects students with the people, programs, and organizations that make Northridge University feel like home. We partner with the Student Activities Board, Multicultural Student Council, Career Services, Campus Recreation, and Falcon Athletics to bring you a full calendar of events every semester.</p>
+        <p>Whether you're looking to make new friends, build your résumé, or just find something fun to do on a Friday night, our office is the one place to keep track of it all.</p>
+        <ul class="info-list about-benefits">
+          <li><strong>Free &amp; low-cost events every week</strong> — from concerts to career fairs, most events cost nothing to attend.</li>
+          <li><strong>One central events calendar</strong> — check a single page instead of a dozen different club social accounts.</li>
+          <li><strong>Direct connections to campus organizations</strong> — including the Student Activities Board, Multicultural Student Council, Career Services, Campus Recreation, and Falcon Athletics.</li>
+          <li><strong>Accessibility accommodations</strong> — sensory-friendly spaces and accessible seating available at every major event.</li>
+        </ul>
       </div>
     </section>
   </main>

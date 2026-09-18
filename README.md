@@ -29,7 +29,20 @@ Assignment-2/
 
 **No JavaScript.** The deliverables call for HTML and CSS only, so navigation, layout, and interactivity (hover/focus states, responsive reflow) are handled entirely with semantic HTML and CSS — no build step or script is required to view the site.
 
-**No images.** The site currently ships without an `images/` folder or any `<img>` elements — sections that previously held illustrations (event thumbnails, hero banners, photo gallery, campus map) were simplified to text/color-based layouts instead.
+**Images.** Photos are referenced at fixed paths in `images/` with descriptive alt text, ready for real photos to be dropped in:
+
+| Path | Used for |
+|---|---|
+| `images/hero.jpg` | Home page hero banner |
+| `images/event-open-mic.jpg` | Open Mic Night card |
+| `images/event-career-fair.jpg` | Career & Internship Fair card |
+| `images/event-homecoming.jpg` | Homecoming Rivalry Game card |
+| `images/event-food-fest.jpg` | International Food Festival card |
+| `images/event-yoga.jpg` | Wellness & Yoga Workshop card |
+
+A dark gradient overlay sits between the hero photo and its text so the heading and buttons stay readable over any photo.
+
+**Event cards.** Each of the 5 upcoming-event cards includes an image, name, date/time, location, a category tag (Social, Career, Athletics, Culture, Wellness), a short description, and a "View Details" link. Since this assignment only calls for one event detail page, every "View Details" link points to `event.html`; each link has a unique `aria-label` naming its event so it remains meaningful out of context (e.g. "View details for Open Mic Night") rather than pointing to unbuilt pages. The grid itself uses CSS Grid at three different widths — 1 column on mobile, 2 at the 600px breakpoint, 3 at the 900px breakpoint.
 
 ## Viewing the site
 
