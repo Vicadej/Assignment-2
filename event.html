@@ -42,7 +42,10 @@
     </nav>
 
     <section class="event-hero">
-      <img class="event-hero-img" src="images/welcome-fest.jpg" alt="Wide view of festival tents and string lights on the Quad during Fall Welcome Fest">
+      <figure class="hero-media">
+        <img class="event-hero-img" src="images/welcome-fest.jpg" alt="Wide view of festival tents and string lights on the Quad during Fall Welcome Fest">
+        <figcaption class="sr-only">Crowd enjoying last year's Fall Welcome Fest at sunset</figcaption>
+      </figure>
       <div class="hero-overlay"></div>
       <div class="container event-hero-content">
         <div class="event-hero-tags">
@@ -51,13 +54,13 @@
         </div>
         <h1>Fall Welcome Fest</h1>
         <p class="event-hero-lede">The Student Activities Board's biggest welcome-week celebration — live music, food trucks, and 40+ student organizations on the Quad.</p>
-        <p class="event-hero-meta">📅 Saturday, September 20, 2026 · 4:00 – 8:00 PM &nbsp;·&nbsp; 📍 The Quad</p>
+        <p class="event-hero-meta">📅 <time datetime="2026-09-20T16:00">Saturday, September 20, 2026 · 4:00 – 8:00 PM</time> &nbsp;·&nbsp; 📍 The Quad</p>
       </div>
     </section>
 
     <section class="event-details container">
       <div class="event-details-grid">
-        <div class="event-main">
+        <article class="event-main">
           <h2>About This Event</h2>
           <p>Join thousands of Falcons for the official kickoff to the fall semester. Fall Welcome Fest fills the Quad with music, food, and free giveaways as student organizations, campus departments, and local vendors set up booths to help you find your community for the year ahead.</p>
           <p>Whether you're a first-year looking to make friends, a returning student catching up with old ones, or just here for the free food trucks, there's something for everyone. Rain plan: the event moves indoors to the Union Grand Hall, with an announcement posted on this page and emailed to all students by noon that day.</p>
@@ -75,12 +78,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td>4:00 PM</td><td>Gates open · organization booths &amp; lawn games begin</td></tr>
-              <tr><td>4:30 PM</td><td>Food trucks open</td></tr>
-              <tr><td>5:15 PM</td><td>Welcome remarks from Student Body President</td></tr>
-              <tr><td>5:30 PM</td><td>Live music from campus bands</td></tr>
-              <tr><td>7:00 PM</td><td>Headline performance &amp; giveaway drawing</td></tr>
-              <tr><td>8:00 PM</td><td>Event ends</td></tr>
+              <tr><td><time datetime="16:00">4:00 PM</time></td><td>Gates open · organization booths &amp; lawn games begin</td></tr>
+              <tr><td><time datetime="16:30">4:30 PM</time></td><td>Food trucks open</td></tr>
+              <tr><td><time datetime="17:15">5:15 PM</time></td><td>Welcome remarks from Student Body President</td></tr>
+              <tr><td><time datetime="17:30">5:30 PM</time></td><td>Live music from campus bands</td></tr>
+              <tr><td><time datetime="19:00">7:00 PM</time></td><td>Headline performance &amp; giveaway drawing</td></tr>
+              <tr><td><time datetime="20:00">8:00 PM</time></td><td>Event ends</td></tr>
             </tbody>
           </table>
 
@@ -97,16 +100,16 @@
 
           <h2>Location</h2>
           <p>The Quad sits at the heart of campus, between the Library, the Student Union, and the Recreation Center — look for the string lights and main stage.</p>
-        </div>
+        </article>
 
         <aside class="event-sidebar" aria-label="Event quick facts">
           <div class="fact-card">
             <h2>Quick Facts</h2>
             <dl>
               <dt>Date</dt>
-              <dd>Saturday, September 20, 2026</dd>
+              <dd><time datetime="2026-09-20">Saturday, September 20, 2026</time></dd>
               <dt>Time</dt>
-              <dd>4:00 PM – 8:00 PM</dd>
+              <dd><time datetime="16:00">4:00 PM</time> – <time datetime="20:00">8:00 PM</time></dd>
               <dt>Location</dt>
               <dd>The Quad, Northridge University</dd>
               <dt>Organizer</dt>
@@ -124,23 +127,29 @@
     <section class="related-events container" aria-labelledby="related-heading">
       <h2 id="related-heading">Related Events</h2>
       <ul class="related-events-list">
-        <li class="related-event-card">
-          <p class="event-date">Thu, Sept 25 · 7:00 PM</p>
-          <h3>Open Mic Night</h3>
-          <p class="event-location">📍 Student Union Café</p>
-          <a class="details-link" href="index.html#events" aria-label="View details for Open Mic Night">View Details →</a>
+        <li>
+          <article class="related-event-card">
+            <p class="event-date"><time datetime="2026-09-25T19:00">Thu, Sept 25 · 7:00 PM</time></p>
+            <h3>Open Mic Night</h3>
+            <p class="event-location">📍 Student Union Café</p>
+            <a class="details-link" href="index.html#events" aria-label="View details for Open Mic Night">View Details →</a>
+          </article>
         </li>
-        <li class="related-event-card">
-          <p class="event-date">Fri, Oct 2 · 10:00 AM</p>
-          <h3>Career &amp; Internship Fair</h3>
-          <p class="event-location">📍 Grand Hall, Union Building</p>
-          <a class="details-link" href="index.html#events" aria-label="View details for the Career and Internship Fair">View Details →</a>
+        <li>
+          <article class="related-event-card">
+            <p class="event-date"><time datetime="2026-10-02T10:00">Fri, Oct 2 · 10:00 AM</time></p>
+            <h3>Career &amp; Internship Fair</h3>
+            <p class="event-location">📍 Grand Hall, Union Building</p>
+            <a class="details-link" href="index.html#events" aria-label="View details for the Career and Internship Fair">View Details →</a>
+          </article>
         </li>
-        <li class="related-event-card">
-          <p class="event-date">Sat, Oct 10 · 6:00 PM</p>
-          <h3>Homecoming Rivalry Game</h3>
-          <p class="event-location">📍 Falcon Stadium</p>
-          <a class="details-link" href="index.html#events" aria-label="View details for the Homecoming Rivalry Game">View Details →</a>
+        <li>
+          <article class="related-event-card">
+            <p class="event-date"><time datetime="2026-10-10T18:00">Sat, Oct 10 · 6:00 PM</time></p>
+            <h3>Homecoming Rivalry Game</h3>
+            <p class="event-location">📍 Falcon Stadium</p>
+            <a class="details-link" href="index.html#events" aria-label="View details for the Homecoming Rivalry Game">View Details →</a>
+          </article>
         </li>
       </ul>
     </section>

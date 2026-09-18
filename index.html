@@ -35,7 +35,10 @@
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-heading">
-      <img class="hero-bg" src="images/hero.jpg" alt="Students gathering on the Quad at Northridge University during a campus event">
+      <figure class="hero-media">
+        <img class="hero-bg" src="images/hero.jpg" alt="Students gathering on the Quad at Northridge University during a campus event">
+        <figcaption class="sr-only">Students gathering on the Quad during a past campus event</figcaption>
+      </figure>
       <div class="hero-overlay"></div>
       <div class="container hero-inner">
         <p class="eyebrow">Fall Semester 2026</p>
@@ -49,20 +52,20 @@
     </section>
 
     <section class="featured" aria-labelledby="featured-heading">
-      <div class="container featured-card">
+      <article class="container featured-card">
         <div class="featured-content">
           <p class="tag">Featured Event</p>
           <h2 id="featured-heading">Fall Welcome Fest</h2>
           <ul class="meta-list">
-            <li><strong>Date:</strong> Saturday, September 20, 2026</li>
-            <li><strong>Time:</strong> 4:00 PM – 8:00 PM</li>
+            <li><strong>Date:</strong> <time datetime="2026-09-20">Saturday, September 20, 2026</time></li>
+            <li><strong>Time:</strong> <time datetime="16:00">4:00 PM</time> – <time datetime="20:00">8:00 PM</time></li>
             <li><strong>Location:</strong> The Quad</li>
             <li><strong>Cost:</strong> Free for all students</li>
           </ul>
           <p>Kick off the semester with live music, food trucks, lawn games, and free giveaways from over 40 student organizations. This is the Student Activities Board's biggest welcome event of the year.</p>
           <a class="btn btn-primary" href="event.html">View Full Details →</a>
         </div>
-      </div>
+      </article>
     </section>
 
     <section class="events" id="events" aria-labelledby="events-heading">
@@ -70,70 +73,80 @@
         <h2 id="events-heading">More Events This Month</h2>
         <p class="section-lede">A quick look at what else is on the calendar. Check back often — new events are added every week.</p>
         <ul class="event-grid">
-          <li class="event-card">
-            <img src="images/event-open-mic.jpg" alt="A student performing at the microphone during Open Mic Night in the Student Union Café" loading="lazy">
-            <div class="event-card-body">
-              <div class="event-card-meta">
-                <p class="event-date">Thu, Sept 25 · 7:00 PM</p>
-                <span class="category-tag">Social</span>
+          <li>
+            <article class="event-card">
+              <figure class="event-card-media">
+                <img src="images/event-open-mic.jpg" alt="A student performing at the microphone during Open Mic Night in the Student Union Café" loading="lazy">
+                <figcaption class="category-tag">Social</figcaption>
+              </figure>
+              <div class="event-card-body">
+                <p class="event-date"><time datetime="2026-09-25T19:00">Thu, Sept 25 · 7:00 PM</time></p>
+                <h3>Open Mic Night</h3>
+                <p class="event-location">📍 Student Union Café</p>
+                <p>Sign up to perform or just enjoy an evening of music, poetry, and comedy from fellow students. Hosted by the Student Activities Board.</p>
+                <a class="details-link" href="event.html" aria-label="View details for Open Mic Night">View Details →</a>
               </div>
-              <h3>Open Mic Night</h3>
-              <p class="event-location">📍 Student Union Café</p>
-              <p>Sign up to perform or just enjoy an evening of music, poetry, and comedy from fellow students. Hosted by the Student Activities Board.</p>
-              <a class="details-link" href="event.html" aria-label="View details for Open Mic Night">View Details →</a>
-            </div>
+            </article>
           </li>
-          <li class="event-card">
-            <img src="images/event-career-fair.jpg" alt="Students talking with recruiters at booths during the Career and Internship Fair" loading="lazy">
-            <div class="event-card-body">
-              <div class="event-card-meta">
-                <p class="event-date">Fri, Oct 2 · 10:00 AM</p>
-                <span class="category-tag">Career</span>
+          <li>
+            <article class="event-card">
+              <figure class="event-card-media">
+                <img src="images/event-career-fair.jpg" alt="Students talking with recruiters at booths during the Career and Internship Fair" loading="lazy">
+                <figcaption class="category-tag">Career</figcaption>
+              </figure>
+              <div class="event-card-body">
+                <p class="event-date"><time datetime="2026-10-02T10:00">Fri, Oct 2 · 10:00 AM</time></p>
+                <h3>Career &amp; Internship Fair</h3>
+                <p class="event-location">📍 Grand Hall, Union Building</p>
+                <p>Meet recruiters from over 60 companies and nonprofits. Bring copies of your résumé — Career Services will also run free on-site reviews.</p>
+                <a class="details-link" href="event.html" aria-label="View details for the Career and Internship Fair">View Details →</a>
               </div>
-              <h3>Career &amp; Internship Fair</h3>
-              <p class="event-location">📍 Grand Hall, Union Building</p>
-              <p>Meet recruiters from over 60 companies and nonprofits. Bring copies of your résumé — Career Services will also run free on-site reviews.</p>
-              <a class="details-link" href="event.html" aria-label="View details for the Career and Internship Fair">View Details →</a>
-            </div>
+            </article>
           </li>
-          <li class="event-card">
-            <img src="images/event-homecoming.jpg" alt="Students cheering in the stands at the Homecoming Rivalry Game" loading="lazy">
-            <div class="event-card-body">
-              <div class="event-card-meta">
-                <p class="event-date">Sat, Oct 10 · 6:00 PM</p>
-                <span class="category-tag">Athletics</span>
+          <li>
+            <article class="event-card">
+              <figure class="event-card-media">
+                <img src="images/event-homecoming.jpg" alt="Students cheering in the stands at the Homecoming Rivalry Game" loading="lazy">
+                <figcaption class="category-tag">Athletics</figcaption>
+              </figure>
+              <div class="event-card-body">
+                <p class="event-date"><time datetime="2026-10-10T18:00">Sat, Oct 10 · 6:00 PM</time></p>
+                <h3>Homecoming Rivalry Game</h3>
+                <p class="event-location">📍 Falcon Stadium</p>
+                <p>Cheer on the Northridge Falcons as they face the Ridgeview Hawks. Student section opens at 5:00 PM with a free t-shirt giveaway.</p>
+                <a class="details-link" href="event.html" aria-label="View details for the Homecoming Rivalry Game">View Details →</a>
               </div>
-              <h3>Homecoming Rivalry Game</h3>
-              <p class="event-location">📍 Falcon Stadium</p>
-              <p>Cheer on the Northridge Falcons as they face the Ridgeview Hawks. Student section opens at 5:00 PM with a free t-shirt giveaway.</p>
-              <a class="details-link" href="event.html" aria-label="View details for the Homecoming Rivalry Game">View Details →</a>
-            </div>
+            </article>
           </li>
-          <li class="event-card">
-            <img src="images/event-food-fest.jpg" alt="A spread of dishes from different cultures at the International Food Festival" loading="lazy">
-            <div class="event-card-body">
-              <div class="event-card-meta">
-                <p class="event-date">Sun, Oct 18 · 12:00 PM</p>
-                <span class="category-tag">Culture</span>
+          <li>
+            <article class="event-card">
+              <figure class="event-card-media">
+                <img src="images/event-food-fest.jpg" alt="A spread of dishes from different cultures at the International Food Festival" loading="lazy">
+                <figcaption class="category-tag">Culture</figcaption>
+              </figure>
+              <div class="event-card-body">
+                <p class="event-date"><time datetime="2026-10-18T12:00">Sun, Oct 18 · 12:00 PM</time></p>
+                <h3>International Food Festival</h3>
+                <p class="event-location">📍 Commons Lawn</p>
+                <p>Sample dishes from over 20 cultures, prepared by the Multicultural Student Council and campus international organizations.</p>
+                <a class="details-link" href="event.html" aria-label="View details for the International Food Festival">View Details →</a>
               </div>
-              <h3>International Food Festival</h3>
-              <p class="event-location">📍 Commons Lawn</p>
-              <p>Sample dishes from over 20 cultures, prepared by the Multicultural Student Council and campus international organizations.</p>
-              <a class="details-link" href="event.html" aria-label="View details for the International Food Festival">View Details →</a>
-            </div>
+            </article>
           </li>
-          <li class="event-card">
-            <img src="images/event-yoga.jpg" alt="Students stretching on mats during the Wellness and Yoga Workshop" loading="lazy">
-            <div class="event-card-body">
-              <div class="event-card-meta">
-                <p class="event-date">Thu, Oct 22 · 5:30 PM</p>
-                <span class="category-tag">Wellness</span>
+          <li>
+            <article class="event-card">
+              <figure class="event-card-media">
+                <img src="images/event-yoga.jpg" alt="Students stretching on mats during the Wellness and Yoga Workshop" loading="lazy">
+                <figcaption class="category-tag">Wellness</figcaption>
+              </figure>
+              <div class="event-card-body">
+                <p class="event-date"><time datetime="2026-10-22T17:30">Thu, Oct 22 · 5:30 PM</time></p>
+                <h3>Wellness &amp; Yoga Workshop</h3>
+                <p class="event-location">📍 Rec Center Studio B</p>
+                <p>A relaxing all-levels session led by Campus Recreation. Mats provided — just bring water and comfortable clothing.</p>
+                <a class="details-link" href="event.html" aria-label="View details for the Wellness and Yoga Workshop">View Details →</a>
               </div>
-              <h3>Wellness &amp; Yoga Workshop</h3>
-              <p class="event-location">📍 Rec Center Studio B</p>
-              <p>A relaxing all-levels session led by Campus Recreation. Mats provided — just bring water and comfortable clothing.</p>
-              <a class="details-link" href="event.html" aria-label="View details for the Wellness and Yoga Workshop">View Details →</a>
-            </div>
+            </article>
           </li>
         </ul>
       </div>

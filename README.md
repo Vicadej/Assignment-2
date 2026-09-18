@@ -1,12 +1,16 @@
 # Campus Event Guide — Northridge University
 
-A small, responsive two-page website built for the Office of Student Engagement so students can discover campus activities. "Northridge University," its organizations, and all events on the site are invented for this assignment.
+## Project Description
+
+Campus Event Guide is a two-page website for the Office of Student Engagement at Northridge University (a fictional school invented for this assignment). Its purpose is to give students one place to browse what's happening on campus — a home page listing upcoming events, and a detail page for the semester's featured event with a full schedule and quick facts.
+
+**Intended audience:** currently enrolled students looking for something to do on campus (social events, career fairs, games, wellness sessions), especially first-years and students who aren't already plugged into individual clubs' social media. A secondary audience is other campus organizations, who could use this as a template for how their own events might be listed.
 
 **Pages**
-- `index.html` — home page with a hero banner, a highlighted featured event, a grid of upcoming events, and an "About" section for the Office of Student Engagement.
-- `event.html` — a detail page for the featured event ("Fall Welcome Fest") with a large hero image, full description, attendee expectations, schedule table, accessibility info, a quick-facts sidebar with an RSVP button, and a related-events section.
+- `index.html` — home page with a hero banner, a highlighted featured event, a grid of 5 upcoming events, and an "About" section.
+- `event.html` — a detail page for the featured event ("Fall Welcome Fest") with a large hero image, full description, schedule table, accessibility info, a quick-facts sidebar with an RSVP button, and a related-events section.
 
-## Project structure
+## Project Structure
 
 ```
 Assignment-2/
@@ -14,24 +18,51 @@ Assignment-2/
 ├── event.html
 ├── css/
 │   └── styles.css
+├── images/
 └── README.md
 ```
 
-## Design decisions
+## Layout Decisions
 
-**Layout & responsiveness.** The stylesheet is written mobile-first: the base rules target small screens (single-column event cards, stacked navigation), then two `min-width` breakpoints (`600px` and `900px`) progressively switch layouts to a two-column featured card, a 2- or 3-column event grid, and a two-column article/sidebar layout on the event page. This was chosen over a desktop-first approach because most students will first check event listings from a phone between classes.
+**CSS Grid** was used wherever content needed to align on two axes at once (rows *and* columns), or needed unequal column widths:
+- `.event-grid` (index.html, upcoming events) — the 5 event cards need to snap into strict, equal-width columns whose *count* changes at each breakpoint (1 → 2 → 3). Grid's `grid-template-columns` makes that a one-line change per breakpoint, which would need more workarounds with Flexbox.
+- `.event-details-grid` (event.html, main content + sidebar) — a genuine two-column page layout with *unequal* column widths (`2fr 1fr`). Grid's `fr` units were the natural fit.
+- `.featured-card` (index.html) — the featured-event card becomes a two-column image/content layout at the 600px breakpoint.
 
-**Color palette.** Navy (`#14213D`) and gold (`#FCA311`) were chosen as a classic "state university" color scheme that reads as trustworthy and energetic without needing a real school's branding. Neutral grays and a soft off-white background (`#F4F6FA`) keep long text sections readable, and all text/background pairings were checked for WCAG AA contrast.
+**Flexbox** was used wherever content needed to align or distribute along a single axis, especially when it also needed to wrap:
+- `.site-nav ul` and `.header-inner` — the logo and nav links sit on one axis and need to wrap onto their own line on narrow screens; `justify-content: space-between` and `flex-wrap: wrap` handle this directly.
+- `.hero-actions` and `.event-hero-tags` — button/tag rows that wrap onto a second line if the screen is too narrow.
+- `.event-card` (internal layout) — stacks the image and body vertically and uses `margin-top: auto` on the "View Details" link to pin it to the bottom of the card regardless of description length — a classic one-axis Flexbox trick that Grid can't do as simply.
+- `.related-events-list` (event.html) — a row of compact cards that should wrap onto multiple lines as space allows, rather than snapping to fixed columns, so Flexbox's `flex-wrap` fit better than Grid's fixed tracks.
 
-**Typography.** Google Fonts' Poppins (headings) pairs a friendly, rounded geometric sans with Inter (body text), which is optimized for on-screen readability at small sizes. Both are loaded via `<link>` with `preconnect` hints for performance, and fall back to system sans-serif fonts if the request fails.
+## Responsive Design
 
-**Accessibility.** Both pages include a "skip to main content" link, a single `<h1>` per page, and landmark elements (`header`, `nav`, `main`, `aside`, `footer`). Interactive elements have visible focus outlines (`:focus-visible`), and the current page is marked in navigation with `aria-current="page"`.
+The stylesheet is mobile-first: base (unprefixed) rules target the smallest screens, and two `min-width` media queries progressively enhance the layout.
 
-**No JavaScript.** The deliverables call for HTML and CSS only, so navigation, layout, and interactivity (hover/focus states, responsive reflow) are handled entirely with semantic HTML and CSS — no build step or script is required to view the site.
+| Breakpoint | What changes |
+|---|---|
+| Base (< 600px) | Single-column nav (logo above links), 1-column event grid, stacked featured card, single-column event-details layout (sidebar stacks below the main article), related-event cards wrap to 1 per row. |
+| `min-width: 600px` | Header becomes a row (logo left, nav right), event grid becomes 2 columns, featured card becomes 2 columns (image beside text), footer becomes 3 columns. |
+| `min-width: 900px` | Event grid becomes 3 columns, event-details layout becomes 2 columns (`2fr 1fr` article + sidebar), hero heading sizes increase, the event hero image gets a fixed height. |
 
-**Images.** Photos are referenced at fixed paths in `images/` with descriptive alt text, ready for real photos to be dropped in:
+**Testing.** Both pages were checked at three representative widths using a browser's responsive design mode — roughly 375px (phone), 768px (tablet), and 1280px (desktop) — confirming the nav collapses/expands correctly, the event grid changes column count at each breakpoint, and the event-details sidebar moves below the main content on narrow screens. Pages were also served locally (`python -m http.server`) to confirm all assets load correctly outside the editor.
 
-| Path | Used for |
+## Semantic HTML
+
+- **`<main>`** — exactly one per page, wrapping all primary content so assistive tech (and the "skip to main content" link) can jump straight past the repeated header/nav.
+- **`<article>`** — used for each event card and for the event-detail write-up (`.event-main`), since each represents independent, self-contained content that would still make sense on its own, outside the page.
+- **`<figure>` / `<figcaption>`** — wraps every image so its caption is explicitly associated with it in the markup, not just placed nearby visually. On event cards, the category badge (Social, Career, etc.) *is* the figcaption; on hero photos, a screen-reader-only figcaption describes the scene.
+- **`<time datetime="…">`** — every date and time value (event cards, the schedule table, sidebar quick facts) uses `<time>` with a machine-readable `datetime` attribute, rather than plain text.
+- **`<nav aria-label="…">`** — used for both the primary site navigation and the breadcrumb on event.html, so screen reader users can jump directly to either navigation landmark and tell them apart.
+- **`<aside>`** — the event-detail Quick Facts sidebar is marked as tangential/supplementary to the main article, not part of the primary content flow.
+
+## Sources
+
+**Fonts.** Poppins (headings) and Inter (body text) are loaded from Google Fonts (fonts.google.com) via `<link>`, free to use under the Open Font License.
+
+**Images.** All photographs in `images/` were downloaded from Unsplash (unsplash.com) and Pexels (pexels.com) and are used under their respective free-to-use licenses (neither requires attribution, but they're credited here for transparency):
+
+| File | Used for |
 |---|---|
 | `images/hero.jpg` | Home page hero banner |
 | `images/event-open-mic.jpg` | Open Mic Night card |
@@ -41,13 +72,9 @@ Assignment-2/
 | `images/event-yoga.jpg` | Wellness & Yoga Workshop card |
 | `images/welcome-fest.jpg` | Event detail page hero banner |
 
-A dark gradient overlay sits between each hero photo and its text so the heading and buttons stay readable over any photo.
+**Borrowed content.** None — all copy (event names, descriptions, schedule, organization names, and the university itself) was written for this assignment and is fictional.
 
-**Event cards.** Each of the 5 upcoming-event cards includes an image, name, date/time, location, a category tag (Social, Career, Athletics, Culture, Wellness), a short description, and a "View Details" link. Since this assignment only calls for one event detail page, every "View Details" link points to `event.html`; each link has a unique `aria-label` naming its event so it remains meaningful out of context (e.g. "View details for Open Mic Night") rather than pointing to unbuilt pages. The grid itself uses CSS Grid at three different widths — 1 column on mobile, 2 at the 600px breakpoint, 3 at the 900px breakpoint.
-
-**Event detail page layout.** `event.html` uses CSS Grid for its two-column body (`.event-details-grid`): a single column on mobile/tablet that stacks the sidebar below the main article, switching to a 2fr/1fr article+sidebar split at the 900px breakpoint. The sidebar has date, time, location, organizer, and admission info, plus an RSVP button and a contact button. The "Related Events" section underneath uses Flexbox (`display: flex; flex-wrap: wrap`) instead of Grid for its three compact cards, so it's a deliberate contrast with the Grid-based layout used everywhere else — demonstrating both techniques and letting the cards reflow naturally at any width.
-
-## Viewing the site
+## Viewing the Site
 
 No build step or server is required. Clone the repository and open `index.html` in a browser, or serve the folder locally, e.g.:
 

@@ -1,8 +1,3 @@
-/* ===========================================================
-   Campus Event Guide — Northridge University
-   Mobile-first stylesheet. Breakpoints: 600px (tablet), 900px (desktop)
-   =========================================================== */
-
 :root {
   --color-navy: #14213D;
   --color-navy-light: #2A4E7C;
@@ -21,7 +16,6 @@
   --container-width: 1140px;
 }
 
-/* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -32,6 +26,7 @@ body {
   line-height: 1.6;
 }
 img { max-width: 100%; display: block; }
+figure { margin: 0; }
 a { color: var(--color-navy-light); }
 h1, h2, h3 { font-family: var(--font-heading); color: var(--color-navy); line-height: 1.25; }
 ul { margin: 0; padding: 0; list-style: none; }
@@ -73,7 +68,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding-inline: 1.25rem;
 }
 
-/* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
   font-family: var(--font-heading);
@@ -100,7 +94,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .btn-block { display: block; text-align: center; margin-top: 1rem; }
 
-/* ---------- Header ---------- */
 .site-header {
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
@@ -143,7 +136,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-bottom-color: var(--color-gold);
 }
 
-/* ---------- Hero ---------- */
 .hero {
   position: relative;
   color: var(--color-surface);
@@ -194,7 +186,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   gap: 0.85rem;
 }
 
-/* ---------- Featured event card ---------- */
 .featured {
   padding-block: 3rem;
 }
@@ -228,7 +219,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .featured-content p { margin: 0 0 1.25rem; }
 
-/* ---------- Events grid ---------- */
 .events { padding-block: 1rem 3.5rem; }
 .events h2 { margin-bottom: 0.4rem; }
 .section-lede { color: var(--color-text-muted); margin: 0 0 1.75rem; }
@@ -238,7 +228,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   grid-template-columns: 1fr;
   gap: 1.5rem;
 }
+.event-grid > li { display: flex; }
 .event-card {
+  flex: 1 1 auto;
+  width: 100%;
   background: var(--color-surface);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -246,22 +239,16 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: flex;
   flex-direction: column;
 }
-.event-card img { width: 100%; height: 170px; object-fit: cover; }
+.event-card-media { position: relative; }
+.event-card-media img { width: 100%; height: 170px; object-fit: cover; }
 .event-card-body { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
-.event-card-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  margin: 0 0 0.4rem;
-}
 .event-date {
   color: var(--color-gold);
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  margin: 0;
+  margin: 0 0 0.4rem;
 }
 .category-tag {
   flex-shrink: 0;
@@ -275,6 +262,13 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
 }
+.event-card-media .category-tag {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow);
+}
 .event-card h3 { margin: 0 0 0.35rem; font-size: 1.15rem; }
 .event-location { color: var(--color-text-muted); margin: 0 0 0.6rem; font-size: 0.9rem; }
 .event-card-body p:last-of-type { margin-bottom: 1rem; }
@@ -286,13 +280,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .details-link:hover { text-decoration: underline; }
 
-/* ---------- About ---------- */
 .about { padding-block: 3.5rem; background: var(--color-navy); color: #E9EEF6; }
 .about h2 { color: var(--color-surface); }
 .about-inner { max-width: 800px; }
 .about-benefits { margin-top: 1.5rem; }
 
-/* ---------- Footer ---------- */
 .site-footer {
   background: #0F1B33;
   color: #C9D3E5;
@@ -316,13 +308,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* ---------- Breadcrumb ---------- */
 .breadcrumb { padding-block: 1rem 0; }
 .breadcrumb ol { display: flex; gap: 0.5rem; flex-wrap: wrap; font-size: 0.9rem; color: var(--color-text-muted); }
 .breadcrumb li:not(:last-child)::after { content: "/"; margin-left: 0.5rem; }
 .breadcrumb a { text-decoration: none; }
 
-/* ---------- Event detail hero ---------- */
 .event-hero {
   position: relative;
   color: var(--color-surface);
@@ -344,7 +334,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .event-hero-lede { max-width: 560px; color: #E9EEF6; margin: 0 0 0.75rem; }
 .event-hero-meta { max-width: 560px; color: #E9EEF6; margin: 0; font-weight: 500; }
 
-/* ---------- Event details layout ---------- */
 .event-details { padding-block: 2.5rem 4rem; }
 .event-details-grid {
   display: grid;
@@ -383,7 +372,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-weight: 700;
 }
 
-/* ---------- Sidebar ---------- */
 .event-sidebar { display: grid; gap: 1.5rem; align-content: start; }
 .fact-card {
   background: var(--color-surface);
@@ -403,7 +391,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .fact-card dt:first-child { margin-top: 0; }
 .fact-card dd { margin: 0.15rem 0 0; font-weight: 500; }
 
-/* ---------- Related events (flexbox, wraps) ---------- */
 .related-events { padding-block: 1rem 4rem; }
 .related-events h2 { margin-bottom: 1.25rem; }
 .related-events-list {
@@ -411,8 +398,9 @@ ul { margin: 0; padding: 0; list-style: none; }
   flex-wrap: wrap;
   gap: 1.25rem;
 }
+.related-events-list > li { flex: 1 1 220px; }
 .related-event-card {
-  flex: 1 1 220px;
+  height: 100%;
   background: var(--color-surface);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -420,9 +408,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .related-event-card h3 { margin: 0 0 0.35rem; font-size: 1.05rem; }
 
-/* ===========================================================
-   Tablet and up
-   =========================================================== */
 @media (min-width: 600px) {
   .header-inner {
     flex-direction: row;
@@ -434,9 +419,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   .footer-inner { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* ===========================================================
-   Desktop and up
-   =========================================================== */
 @media (min-width: 900px) {
   .hero h1 { font-size: 3rem; }
   .hero-inner { padding-block: 6rem 5rem; }
